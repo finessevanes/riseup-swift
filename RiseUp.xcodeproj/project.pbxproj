@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2651F5D02AA5BF0D00CBB8E2 /* TimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */; };
 		267EE5A42AA4911100675072 /* RiseUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5A32AA4911100675072 /* RiseUpApp.swift */; };
 		267EE5A62AA4911100675072 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5A52AA4911100675072 /* ContentView.swift */; };
 		267EE5A82AA4911200675072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5A72AA4911200675072 /* Assets.xcassets */; };
@@ -14,6 +15,11 @@
 		267EE5B52AA4911200675072 /* RiseUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5B42AA4911200675072 /* RiseUpTests.swift */; };
 		267EE5BF2AA4911200675072 /* RiseUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5BE2AA4911200675072 /* RiseUpUITests.swift */; };
 		267EE5C12AA4911200675072 /* RiseUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5C02AA4911200675072 /* RiseUpUITestsLaunchTests.swift */; };
+		267EE5CE2AA4915C00675072 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5CD2AA4915C00675072 /* AlarmViewController.swift */; };
+		267EE5D02AA4921300675072 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5CF2AA4921300675072 /* alarm.mp3 */; };
+		267EE5D22AA4924500675072 /* whos-gonna-carry-the-boats.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */; };
+		267EE5D42AA4928900675072 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5D32AA4928900675072 /* TimePickerView.swift */; };
+		267EE5D62AA49A2100675072 /* SharedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5D52AA49A2100675072 /* SharedTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtility.swift; sourceTree = "<group>"; };
 		267EE5A02AA4911100675072 /* RiseUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiseUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267EE5A32AA4911100675072 /* RiseUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseUpApp.swift; sourceTree = "<group>"; };
 		267EE5A52AA4911100675072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +51,11 @@
 		267EE5BA2AA4911200675072 /* RiseUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiseUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		267EE5BE2AA4911200675072 /* RiseUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseUpUITests.swift; sourceTree = "<group>"; };
 		267EE5C02AA4911200675072 /* RiseUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		267EE5CD2AA4915C00675072 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		267EE5CF2AA4921300675072 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "whos-gonna-carry-the-boats.mp3"; sourceTree = "<group>"; };
+		267EE5D32AA4928900675072 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		267EE5D52AA49A2100675072 /* SharedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,8 @@
 		267EE5972AA4911100675072 = {
 			isa = PBXGroup;
 			children = (
+				267EE5CF2AA4921300675072 /* alarm.mp3 */,
+				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
 				267EE5A22AA4911100675072 /* RiseUp */,
 				267EE5B32AA4911200675072 /* RiseUpTests */,
 				267EE5BD2AA4911200675072 /* RiseUpUITests */,
@@ -96,6 +110,10 @@
 			children = (
 				267EE5A32AA4911100675072 /* RiseUpApp.swift */,
 				267EE5A52AA4911100675072 /* ContentView.swift */,
+				267EE5D32AA4928900675072 /* TimePickerView.swift */,
+				2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */,
+				267EE5D52AA49A2100675072 /* SharedTime.swift */,
+				267EE5CD2AA4915C00675072 /* AlarmViewController.swift */,
 				267EE5A72AA4911200675072 /* Assets.xcassets */,
 				267EE5A92AA4911200675072 /* Preview Content */,
 			);
@@ -233,6 +251,8 @@
 			files = (
 				267EE5AB2AA4911200675072 /* Preview Assets.xcassets in Resources */,
 				267EE5A82AA4911200675072 /* Assets.xcassets in Resources */,
+				267EE5D02AA4921300675072 /* alarm.mp3 in Resources */,
+				267EE5D22AA4924500675072 /* whos-gonna-carry-the-boats.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +279,10 @@
 			files = (
 				267EE5A62AA4911100675072 /* ContentView.swift in Sources */,
 				267EE5A42AA4911100675072 /* RiseUpApp.swift in Sources */,
+				267EE5CE2AA4915C00675072 /* AlarmViewController.swift in Sources */,
+				267EE5D42AA4928900675072 /* TimePickerView.swift in Sources */,
+				267EE5D62AA49A2100675072 /* SharedTime.swift in Sources */,
+				2651F5D02AA5BF0D00CBB8E2 /* TimeUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

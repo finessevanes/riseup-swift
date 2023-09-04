@@ -1,21 +1,39 @@
-//
-//  ContentView.swift
-//  RiseUp
-//
-//  Created by Vanessa Mercado on 9/3/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var sharedTime = SharedTime()
+    // new variable to hold the string value once alarm has been set
+    @State var alarmMessage: String = "No alarm set"
+    @State var timeLeft: String = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TimePickerViewAdapter(sharedTime: sharedTime)
+            Button("Set Alarm"){
+                let time = sharedTime.selectedTime
+                timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
+                alarmMessage = "Your alarm has been set for \(time)"
+            }
+            Text(alarmMessage)
+                .font(.headline)
+            Text(timeLeft)
         }
         .padding()
+    }
+}
+
+struct TimePickerViewAdapter: UIViewControllerRepresentable {
+    // to pass this down
+    @ObservedObject var sharedTime: SharedTime
+    
+    func makeUIViewController(context: Context) -> TimePickerView {
+        let controller = TimePickerView()
+        controller.sharedTime = sharedTime  // Pass the shared state here
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: TimePickerView, context: Context) {
+        // Update logic here, if needed
     }
 }
 
