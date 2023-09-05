@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2651F5D02AA5BF0D00CBB8E2 /* TimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */; };
+		2651F5D42AA6EFE300CBB8E2 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651F5D32AA6EFE300CBB8E2 /* CustomButtonStyle.swift */; };
 		267EE5A42AA4911100675072 /* RiseUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5A32AA4911100675072 /* RiseUpApp.swift */; };
 		267EE5A62AA4911100675072 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5A52AA4911100675072 /* ContentView.swift */; };
 		267EE5A82AA4911200675072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5A72AA4911200675072 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtility.swift; sourceTree = "<group>"; };
+		2651F5D32AA6EFE300CBB8E2 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		267EE5A02AA4911100675072 /* RiseUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiseUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267EE5A32AA4911100675072 /* RiseUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseUpApp.swift; sourceTree = "<group>"; };
 		267EE5A52AA4911100675072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,9 +93,18 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		2651F5D22AA6EFC700CBB8E2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		267EE5972AA4911100675072 = {
 			isa = PBXGroup;
 			children = (
+				2651F5D32AA6EFE300CBB8E2 /* CustomButtonStyle.swift */,
+				2651F5D22AA6EFC700CBB8E2 /* Styles */,
 				267EE5CF2AA4921300675072 /* alarm.mp3 */,
 				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
 				2651F5D12AA6D81900CBB8E2 /* Utility */,
@@ -290,6 +301,7 @@
 				267EE5CE2AA4915C00675072 /* AlarmViewController.swift in Sources */,
 				267EE5D42AA4928900675072 /* TimePickerView.swift in Sources */,
 				267EE5D62AA49A2100675072 /* SharedTime.swift in Sources */,
+				2651F5D42AA6EFE300CBB8E2 /* CustomButtonStyle.swift in Sources */,
 				2651F5D02AA5BF0D00CBB8E2 /* TimeUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

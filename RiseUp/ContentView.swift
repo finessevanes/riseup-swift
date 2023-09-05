@@ -3,19 +3,22 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var sharedTime = SharedTime()
     // new variable to hold the string value once alarm has been set
-    @State var alarmMessage: String = "No alarm set"
+    @State var alarmMessage: String = ""
     @State var timeLeft: String = ""
     
     var body: some View {
         VStack {
+            Text(alarmMessage)
+                .font(.headline)
+
             TimePickerViewAdapter(sharedTime: sharedTime)
             Button("Set Alarm"){
                 let time = sharedTime.selectedTime
                 timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
                 alarmMessage = "Your alarm has been set for \(time)"
             }
-            Text(alarmMessage)
-                .font(.headline)
+            .buttonStyle(CustomButtonStyle())
+
             Text(timeLeft)
         }
         .padding()
