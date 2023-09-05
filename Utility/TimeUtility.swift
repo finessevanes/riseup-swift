@@ -1,4 +1,5 @@
 import Foundation
+import UserNotifications
 
 class TimeUtility {
     static func timeUntilAlarm(alarmTimeString: String) -> String {
@@ -32,5 +33,50 @@ class TimeUtility {
         
         return "Alarm time has passed"
     }
+    
+    static func scheduleNotification(at date: Date) {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Alarm"
+        content.body = "Your alarm is going off!"
+        content.sound = .default
+        
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
+        center.add(request)
+    }
 
+    static func convertToAlarmDate(timeString: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+
+        guard let time = formatter.date(from: timeString) else {
+            return nil
+        }
+
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.hour, .minute], from: time)
+        
+        // Get current date components
+        let now = Date()
+        let currentDateComponents = calendar.dateComponents([.year, .month, .day], from: now)
+        
+        // Merge both to get date and time components for today's potential alarm
+        components.year = currentDateComponents.year
+        components.month = currentDateComponents.month
+        components.day = currentDateComponents.day
+        
+        var alarmDate = calendar.date(from: components)
+        
+        // Check if the alarm should be set for today or tomorrow
+        if let alarmDateUnwrapped = alarmDate, alarmDateUnwrapped < now {
+            components.day! += 1 // Add one day
+            alarmDate = calendar.date(from: components)
+        }
+        
+        return alarmDate
+    }
 }
