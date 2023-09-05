@@ -83,11 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2651F5D12AA6D81900CBB8E2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		267EE5972AA4911100675072 = {
 			isa = PBXGroup;
 			children = (
 				267EE5CF2AA4921300675072 /* alarm.mp3 */,
 				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
+				2651F5D12AA6D81900CBB8E2 /* Utility */,
 				267EE5A22AA4911100675072 /* RiseUp */,
 				267EE5B32AA4911200675072 /* RiseUpTests */,
 				267EE5BD2AA4911200675072 /* RiseUpUITests */,
@@ -111,7 +120,6 @@
 				267EE5A32AA4911100675072 /* RiseUpApp.swift */,
 				267EE5A52AA4911100675072 /* ContentView.swift */,
 				267EE5D32AA4928900675072 /* TimePickerView.swift */,
-				2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */,
 				267EE5D52AA49A2100675072 /* SharedTime.swift */,
 				267EE5CD2AA4915C00675072 /* AlarmViewController.swift */,
 				267EE5A72AA4911200675072 /* Assets.xcassets */,
