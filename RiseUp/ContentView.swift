@@ -13,11 +13,12 @@ struct ContentView: View {
 
             TimePickerViewAdapter(sharedTime: sharedTime)
             Button("Set Alarm"){
+                let currentTime = TimePickerView().getCurrentTime()
+                sharedTime.selectedTime = currentTime
                 let time = sharedTime.selectedTime
                 timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
                 alarmMessage = "Your alarm has been set for \(time)"
-            }
-            .buttonStyle(CustomButtonStyle())
+            }            .buttonStyle(CustomButtonStyle())
 
             Text(timeLeft)
         }

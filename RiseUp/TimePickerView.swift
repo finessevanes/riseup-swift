@@ -40,6 +40,11 @@ class TimePickerView: UIViewController {
         sharedTime?.selectedTime = "\(timeString)"
     }
     
+    func getCurrentTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: timePicker.date)
+    }
 }
     
 
