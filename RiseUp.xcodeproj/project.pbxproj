@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26316A692AA8514400923C2C /* SoundUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26316A682AA8514400923C2C /* SoundUtility.swift */; };
 		26316A6B2AA8517000923C2C /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26316A6A2AA8517000923C2C /* MyAppDelegate.swift */; };
+		26316A6D2AA8545A00923C2C /* AlarmSoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26316A6C2AA8545A00923C2C /* AlarmSoundsView.swift */; };
 		2651F5D02AA5BF0D00CBB8E2 /* TimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */; };
 		2651F5D42AA6EFE300CBB8E2 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651F5D32AA6EFE300CBB8E2 /* CustomButtonStyle.swift */; };
 		267EE5A42AA4911100675072 /* RiseUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5A32AA4911100675072 /* RiseUpApp.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		26316A682AA8514400923C2C /* SoundUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundUtility.swift; sourceTree = "<group>"; };
 		26316A6A2AA8517000923C2C /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
+		26316A6C2AA8545A00923C2C /* AlarmSoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundsView.swift; sourceTree = "<group>"; };
 		2651F5CF2AA5BF0D00CBB8E2 /* TimeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtility.swift; sourceTree = "<group>"; };
 		2651F5D32AA6EFE300CBB8E2 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		267EE5A02AA4911100675072 /* RiseUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiseUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26316A6E2AA85A3E00923C2C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				267EE5CF2AA4921300675072 /* alarm.mp3 */,
+				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		2651F5D12AA6D81900CBB8E2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +120,8 @@
 		267EE5972AA4911100675072 = {
 			isa = PBXGroup;
 			children = (
+				26316A6E2AA85A3E00923C2C /* Sounds */,
 				2651F5D22AA6EFC700CBB8E2 /* Styles */,
-				267EE5CF2AA4921300675072 /* alarm.mp3 */,
-				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
 				2651F5D12AA6D81900CBB8E2 /* Utilities */,
 				267EE5A22AA4911100675072 /* RiseUp */,
 				267EE5B32AA4911200675072 /* RiseUpTests */,
@@ -133,6 +143,7 @@
 		267EE5A22AA4911100675072 /* RiseUp */ = {
 			isa = PBXGroup;
 			children = (
+				26316A6C2AA8545A00923C2C /* AlarmSoundsView.swift */,
 				26316A6A2AA8517000923C2C /* MyAppDelegate.swift */,
 				267EE5A32AA4911100675072 /* RiseUpApp.swift */,
 				267EE5A52AA4911100675072 /* ContentView.swift */,
@@ -306,6 +317,7 @@
 				267EE5A42AA4911100675072 /* RiseUpApp.swift in Sources */,
 				26316A692AA8514400923C2C /* SoundUtility.swift in Sources */,
 				267EE5CE2AA4915C00675072 /* AlarmViewController.swift in Sources */,
+				26316A6D2AA8545A00923C2C /* AlarmSoundsView.swift in Sources */,
 				26316A6B2AA8517000923C2C /* MyAppDelegate.swift in Sources */,
 				267EE5D42AA4928900675072 /* TimePickerView.swift in Sources */,
 				267EE5D62AA49A2100675072 /* SharedTime.swift in Sources */,

@@ -14,13 +14,13 @@ struct ContentView: View {
             
             TimePickerViewAdapter(sharedTime: sharedTime)
             Button("Play Sound"){
-                print("playing sound")
+                print("playSound was called")
                 SoundUtility.playSound(soundName: "alarm")
             }
             .buttonStyle(CustomButtonStyle())
             
             Button("Stop Sound"){
-                print("stopping sound")
+                print("stopSound was called")
                 SoundUtility.stopSound()
             }
             .buttonStyle(CustomButtonStyle())
