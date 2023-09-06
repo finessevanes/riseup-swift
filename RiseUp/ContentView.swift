@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @UIApplicationDelegateAdaptor(MyAppDelegate.self) var appDelegate
     @ObservedObject var sharedTime = SharedTime()
     // new variable to hold the string value once alarm has been set
     @State var alarmMessage: String = ""
@@ -12,6 +13,18 @@ struct ContentView: View {
                 .font(.headline)
             
             TimePickerViewAdapter(sharedTime: sharedTime)
+            Button("Play Sound"){
+                print("playing sound")
+                SoundUtility.playSound(soundName: "alarm")
+            }
+            .buttonStyle(CustomButtonStyle())
+            
+            Button("Stop Sound"){
+                print("stopping sound")
+                SoundUtility.stopSound()
+            }
+            .buttonStyle(CustomButtonStyle())
+
             
             Button("Set Alarm") {
                 // Get current time from sharedTime

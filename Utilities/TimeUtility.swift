@@ -38,8 +38,8 @@ class TimeUtility {
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
-        content.title = "Alarm"
-        content.body = "Your alarm is going off!"
+        content.title = "Rise and Shine"
+        content.body = "It's time to get after it!"
         content.sound = .default
         
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
