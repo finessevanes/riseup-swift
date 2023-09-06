@@ -27,15 +27,12 @@ struct ContentView: View {
 
             
             Button("Set Alarm") {
-                // Get current time from sharedTime
+                let currentTime = TimePickerView().getCurrentTime()
+                sharedTime.selectedTime = currentTime
                 let time = sharedTime.selectedTime
                 timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
                 alarmMessage = "Your alarm has been set for \(time)"
-                
-                // Schedule notification
-                if let alarmDate = TimeUtility.convertToAlarmDate(timeString: time) {
-                    TimeUtility.scheduleNotification(at: alarmDate)
-                }
+
             }
             .buttonStyle(CustomButtonStyle())
             
