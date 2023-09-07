@@ -21,5 +21,12 @@ class SoundUtility {
         print("stopping sound")
         audioPlayer?.stop()
     }
-
+    
+    static func saveSelectedSound(soundName: String) {
+        UserDefaults.standard.set(soundName, forKey: "selectedSound")
+    }
+    
+    static func getSelectedSound() -> String? {
+        return UserDefaults.standard.string(forKey: "selectedSound")
+    }
 }

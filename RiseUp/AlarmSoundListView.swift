@@ -3,7 +3,8 @@ import SwiftUI
 struct AlarmSoundListView: View {
     let sounds: [String: String] = ["Turja": "alarm", "David Goggins": "whos-gonna-carry-the-boats"]
     @State private var currentlyPlaying: String? = nil
-    
+    @State private var selectedSound: String? = nil
+
     var body: some View {
         List(sounds.keys.sorted(), id: \.self) { displayName in
             HStack {
@@ -22,10 +23,20 @@ struct AlarmSoundListView: View {
                 }) {
                     Image(systemName: (currentlyPlaying == sounds[displayName]) ? "stop.fill" : "play.fill")
                 }
+                Toggle("", isOn: Binding(
+                    get: { selectedSound == sounds[displayName] },
+                    set: { newValue in
+                        if newValue {
+                            selectedSound = sounds[displayName]
+                        } else {
+                            selectedSound = nil
+                        }
+                    }
+                ))
+                .toggleStyle(SwitchToggleStyle(tint: .red))
             }
         }
     }
-    
 }
 
 struct AlarmSoundListView_Previews: PreviewProvider {
