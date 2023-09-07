@@ -19,23 +19,13 @@ struct ContentView: View {
                     Text("Choose Alarm Sound")
                 }
                     .buttonStyle(CustomButtonStyle())
-                Button("Play Sound"){
-                    print("playSound was called")
-                    SoundUtility.playSound(soundName: "alarm")
-                }
-                    .buttonStyle(CustomButtonStyle())
-                Button("Stop Sound"){
-                    print("stopSound was called")
-                    SoundUtility.stopSound()
-                }
-                    .buttonStyle(CustomButtonStyle())
                 Button("Set Alarm") {
-                    let currentTime = TimePickerView().getCurrentTime()
-                    sharedTime.selectedTime = currentTime
-                    let time = sharedTime.selectedTime
-                    timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
-                    alarmMessage = "Your alarm has been set for \(time)"
-                }
+                    let currentTime = sharedTime.selectedTime
+                    timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: currentTime)
+                    alarmMessage = "Your alarm has been set for \(currentTime)"
+                    if let alarmDate = TimeUtility.convertToAlarmDate(timeString: currentTime) {
+                        TimeUtility.scheduleNotification(at: alarmDate)
+                    }                }
                     .buttonStyle(CustomButtonStyle())
                 Text(timeLeft)
             }
@@ -79,8 +69,6 @@ struct TimePickerViewAdapter: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: TimePickerView, context: Context) {
         // Update logic here, if needed
     }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
