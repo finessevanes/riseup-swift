@@ -8,42 +8,43 @@ struct ContentView: View {
     @State var timeLeft: String = ""
     
     var body: some View {
-        VStack {
-            Text(alarmMessage)
-                .font(.headline)
+        NavigationView {
+            VStack {
+                Text(alarmMessage)
+                    .font(.headline)
             
-            TimePickerViewAdapter(sharedTime: sharedTime)
-            Button("Play Sound"){
-                print("playSound was called")
-                SoundUtility.playSound(soundName: "alarm")
+                TimePickerViewAdapter(sharedTime: sharedTime)
+            
+                NavigationLink(destination: AlarmSoundListView()) {
+                    Text("Choose Alarm Sound")
+                }
+                    .buttonStyle(CustomButtonStyle())
+                Button("Play Sound"){
+                    print("playSound was called")
+                    SoundUtility.playSound(soundName: "alarm")
+                }
+                    .buttonStyle(CustomButtonStyle())
+                Button("Stop Sound"){
+                    print("stopSound was called")
+                    SoundUtility.stopSound()
+                }
+                    .buttonStyle(CustomButtonStyle())
+                Button("Set Alarm") {
+                    let currentTime = TimePickerView().getCurrentTime()
+                    sharedTime.selectedTime = currentTime
+                    let time = sharedTime.selectedTime
+                    timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
+                    alarmMessage = "Your alarm has been set for \(time)"
+                }
+                    .buttonStyle(CustomButtonStyle())
+                Text(timeLeft)
             }
-            .buttonStyle(CustomButtonStyle())
-            
-            Button("Stop Sound"){
-                print("stopSound was called")
-                SoundUtility.stopSound()
-            }
-            .buttonStyle(CustomButtonStyle())
-
-            
-            Button("Set Alarm") {
-                let currentTime = TimePickerView().getCurrentTime()
-                sharedTime.selectedTime = currentTime
-                let time = sharedTime.selectedTime
-                timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: time)
-                alarmMessage = "Your alarm has been set for \(time)"
-
-            }
-            .buttonStyle(CustomButtonStyle())
-            
-            Text(timeLeft)
+                .onAppear {
+                    requestNotificationAuthorization()
+                }
+            .padding()
         }
-        .onAppear {
-            requestNotificationAuthorization()
-        }
-        .padding()
     }
-
     func requestNotificationAuthorization() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in

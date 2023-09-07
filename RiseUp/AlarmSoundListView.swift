@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AlarmSoundListView: View {
-    let sounds: [String: String] = ["Turja": "alarm", "David Goggins": "whos-gonna-carry-the-boats"] // Replace with your actual mappings
+    let sounds: [String: String] = ["Turja": "alarm", "David Goggins": "whos-gonna-carry-the-boats"]
     @State private var currentlyPlaying: String? = nil
     
     var body: some View {
@@ -27,7 +27,6 @@ struct AlarmSoundListView: View {
     }
     
 }
-
 
 struct AlarmSoundListView_Previews: PreviewProvider {
     static var previews: some View {
