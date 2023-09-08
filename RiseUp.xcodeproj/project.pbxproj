@@ -20,9 +20,9 @@
 		267EE5C12AA4911200675072 /* RiseUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5C02AA4911200675072 /* RiseUpUITestsLaunchTests.swift */; };
 		267EE5CE2AA4915C00675072 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5CD2AA4915C00675072 /* AlarmViewController.swift */; };
 		267EE5D02AA4921300675072 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5CF2AA4921300675072 /* alarm.mp3 */; };
-		267EE5D22AA4924500675072 /* whos-gonna-carry-the-boats.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */; };
 		267EE5D42AA4928900675072 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5D32AA4928900675072 /* TimePickerView.swift */; };
 		267EE5D62AA49A2100675072 /* SharedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EE5D52AA49A2100675072 /* SharedTime.swift */; };
+		26A5A3262AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26A5A3252AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 */; };
 		26FF59372AA87DBF00AD3457 /* AlarmSoundListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF59362AA87DBF00AD3457 /* AlarmSoundListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,9 +60,9 @@
 		267EE5C02AA4911200675072 /* RiseUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		267EE5CD2AA4915C00675072 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		267EE5CF2AA4921300675072 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
-		267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "whos-gonna-carry-the-boats.mp3"; sourceTree = "<group>"; };
 		267EE5D32AA4928900675072 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		267EE5D52AA49A2100675072 /* SharedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTime.swift; sourceTree = "<group>"; };
+		26A5A3252AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "whos-gonna-carry-the-boats.mp3"; sourceTree = "<group>"; };
 		26FF59362AA87DBF00AD3457 /* AlarmSoundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				267EE5CF2AA4921300675072 /* alarm.mp3 */,
-				267EE5D12AA4924500675072 /* whos-gonna-carry-the-boats.mp3 */,
+				26A5A3252AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 				267EE5D32AA4928900675072 /* TimePickerView.swift */,
 				267EE5D52AA49A2100675072 /* SharedTime.swift */,
 				267EE5CD2AA4915C00675072 /* AlarmViewController.swift */,
+				26FF59362AA87DBF00AD3457 /* AlarmSoundListView.swift */,
 				267EE5A72AA4911200675072 /* Assets.xcassets */,
 				267EE5A92AA4911200675072 /* Preview Content */,
-				26FF59362AA87DBF00AD3457 /* AlarmSoundListView.swift */,
 			);
 			path = RiseUp;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				267EE5AB2AA4911200675072 /* Preview Assets.xcassets in Resources */,
 				267EE5A82AA4911200675072 /* Assets.xcassets in Resources */,
 				267EE5D02AA4921300675072 /* alarm.mp3 in Resources */,
-				267EE5D22AA4924500675072 /* whos-gonna-carry-the-boats.mp3 in Resources */,
+				26A5A3262AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

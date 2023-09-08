@@ -28,6 +28,7 @@ struct AlarmSoundListView: View {
                     set: { newValue in
                         if newValue {
                             selectedSound = sounds[displayName]
+                            UserDefaults.standard.setValue(selectedSound, forKey: "selectedSound")
                         } else {
                             selectedSound = nil
                         }
