@@ -41,14 +41,6 @@ class TimeUtility {
         content.title = "Rise and Shine"
         content.body = "It's time to get after it!"
         
-        if let savedSound = UserDefaults.standard.string(forKey: "selectedSound") {
-            print("this is in time utility")
-            print(savedSound)
-            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: savedSound + ".mp3"))
-        } else {
-            content.sound = .default
-        }
-
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         

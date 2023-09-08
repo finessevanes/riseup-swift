@@ -10,10 +10,6 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDe
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("this was called")
-        if let savedSound = UserDefaults.standard.string(forKey: "selectedSound") {
-            SoundUtility.playSound(soundName: savedSound)
-        }
-        completionHandler([.banner, .sound])
+        completionHandler([.banner])
     }
 }
