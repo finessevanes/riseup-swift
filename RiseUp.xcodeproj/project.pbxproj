@@ -63,6 +63,7 @@
 		267EE5D32AA4928900675072 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		267EE5D52AA49A2100675072 /* SharedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTime.swift; sourceTree = "<group>"; };
 		26A5A3252AAB0375008FAB64 /* whos-gonna-carry-the-boats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "whos-gonna-carry-the-boats.mp3"; sourceTree = "<group>"; };
+		26A5A3272AAB06E5008FAB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26FF59362AA87DBF00AD3457 /* AlarmSoundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +144,7 @@
 		267EE5A22AA4911100675072 /* RiseUp */ = {
 			isa = PBXGroup;
 			children = (
+				26A5A3272AAB06E5008FAB64 /* Info.plist */,
 				26316A6A2AA8517000923C2C /* MyAppDelegate.swift */,
 				267EE5A32AA4911100675072 /* RiseUpApp.swift */,
 				267EE5A52AA4911100675072 /* ContentView.swift */,
@@ -484,6 +486,7 @@
 				DEVELOPMENT_TEAM = 4CLVCQ7N3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RiseUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,6 +516,7 @@
 				DEVELOPMENT_TEAM = 4CLVCQ7N3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RiseUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
