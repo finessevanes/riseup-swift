@@ -39,6 +39,7 @@ struct ContentView: View {
                         // Your turn-off logic here
                         timer?.invalidate()
                         showTurnOffButton = false
+                        timeLeft = ""
                     }
                     .buttonStyle(CustomButtonStyle())
                 }
