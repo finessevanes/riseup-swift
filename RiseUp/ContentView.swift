@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @UIApplicationDelegateAdaptor(MyAppDelegate.self) var appDelegate
     @ObservedObject var sharedTime = SharedTime()
     // New variables
     @State var alarmMessage: String = ""
