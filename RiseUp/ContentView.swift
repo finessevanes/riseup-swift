@@ -68,7 +68,8 @@ struct ContentView: View {
     
     func requestNotificationAuthorization() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+        center.delegate = UIApplication.shared.delegate as? UNUserNotificationCenterDelegate // Add this line
+        center.requestAuthorization(options: [.alert, .sound, .badge, .provisional]) { granted, error in
             if let error = error {
                 // Handle error here, you might want to print or log it
                 print("Authorization request error: \(error)")
