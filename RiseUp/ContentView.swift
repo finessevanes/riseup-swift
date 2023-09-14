@@ -3,9 +3,11 @@ import SwiftUI
 struct ContentView: View {
     @UIApplicationDelegateAdaptor(MyAppDelegate.self) var appDelegate
     @ObservedObject var sharedTime = SharedTime()
-    // new variable to hold the string value once alarm has been set
+    // New variables
     @State var alarmMessage: String = ""
     @State var timeLeft: String = ""
+    @State var showTurnOffButton: Bool = false
+    @State var timer: Timer? = nil
     
     var body: some View {
         NavigationView {
@@ -14,27 +16,56 @@ struct ContentView: View {
                     .font(.headline)
             
                 TimePickerViewAdapter(sharedTime: sharedTime)
-            
+                
                 NavigationLink(destination: AlarmSoundListView()) {
                     Text("Choose Alarm Sound")
                 }
-                    .buttonStyle(CustomButtonStyle())
+                .buttonStyle(CustomButtonStyle())
+                
                 Button("Set Alarm") {
                     let currentTime = sharedTime.selectedTime
-                    timeLeft = TimeUtility.timeUntilAlarm(alarmTimeString: currentTime)
                     alarmMessage = "Your alarm has been set for \(currentTime)"
                     if let alarmDate = TimeUtility.convertToAlarmDate(timeString: currentTime) {
                         TimeUtility.scheduleNotification(at: alarmDate)
-                    }                }
-                    .buttonStyle(CustomButtonStyle())
-                Text(timeLeft)
-            }
-                .onAppear {
-                    requestNotificationAuthorization()
+                        startCountdown(to: alarmDate)
+                    }
                 }
+                .buttonStyle(CustomButtonStyle())
+                
+                Text(timeLeft)
+                
+                if showTurnOffButton {
+                    Button("Turn Off Alarm") {
+                        // Your turn-off logic here
+                        timer?.invalidate()
+                        showTurnOffButton = false
+                    }
+                    .buttonStyle(CustomButtonStyle())
+                }
+            }
+            .onAppear {
+                requestNotificationAuthorization()
+            }
             .padding()
         }
     }
+    
+    func startCountdown(to date: Date) {
+        timer?.invalidate() // Invalidate any existing timer
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            let now = Date()
+            if now >= date {
+                // Time's up
+                timeLeft = "Time's up!"
+                showTurnOffButton = true
+                timer?.invalidate()
+            } else {
+                let components = Calendar.current.dateComponents([.hour, .minute, .second], from: now, to: date)
+                timeLeft = String(format: "%02d:%02d:%02d", components.hour ?? 0, components.minute ?? 0, components.second ?? 0)
+            }
+        }
+    }
+    
     func requestNotificationAuthorization() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
@@ -53,7 +84,6 @@ struct ContentView: View {
             }
         }
     }
-
 }
 
 struct TimePickerViewAdapter: UIViewControllerRepresentable {
