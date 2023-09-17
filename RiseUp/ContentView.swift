@@ -43,9 +43,6 @@ struct ContentView: View {
                     .buttonStyle(CustomButtonStyle())
                 }
             }
-            .onAppear {
-                requestNotificationAuthorization()
-            }
             .padding()
         }
     }
@@ -62,26 +59,6 @@ struct ContentView: View {
             } else {
                 let components = Calendar.current.dateComponents([.hour, .minute, .second], from: now, to: date)
                 timeLeft = String(format: "%02d:%02d:%02d", components.hour ?? 0, components.minute ?? 0, components.second ?? 0)
-            }
-        }
-    }
-    
-    func requestNotificationAuthorization() {
-        let center = UNUserNotificationCenter.current()
-        center.delegate = UIApplication.shared.delegate as? UNUserNotificationCenterDelegate // Add this line
-        center.requestAuthorization(options: [.alert, .sound, .badge, .provisional]) { granted, error in
-            if let error = error {
-                // Handle error here, you might want to print or log it
-                print("Authorization request error: \(error)")
-                return
-            }
-            
-            if granted {
-                // The user granted permission, you can now schedule notifications
-                print("Permission granted.")
-            } else {
-                // The user denied permission, you won't be able to show notifications
-                print("Permission denied.")
             }
         }
     }
