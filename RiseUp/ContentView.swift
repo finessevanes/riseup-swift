@@ -36,6 +36,7 @@ struct ContentView: View {
                 if showTurnOffButton {
                     Button("Turn Off Alarm") {
                         // Your turn-off logic here
+                        SoundUtility.stopSound()
                         timer?.invalidate()
                         showTurnOffButton = false
                         timeLeft = ""
