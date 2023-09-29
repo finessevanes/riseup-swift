@@ -44,7 +44,7 @@ class TimeUtility {
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "com.finessevanes.riseup.alarmNotification", content: content, trigger: trigger)
         center.add(request)
     }
 

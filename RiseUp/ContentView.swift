@@ -27,8 +27,12 @@ struct ContentView: View {
                     if let alarmDate = TimeUtility.convertToAlarmDate(timeString: currentTime) {
                         TimeUtility.scheduleNotification(at: alarmDate)
                         startCountdown(to: alarmDate)
+                        NotificationCenter.default.post(name: NSNotification.Name("AlarmTimeUpdated"), object: nil, userInfo: ["AlarmTime": alarmDate])
                     }
                 }
+                .buttonStyle(CustomButtonStyle())
+
+
                 .buttonStyle(CustomButtonStyle())
                 
                 Text(timeLeft)
