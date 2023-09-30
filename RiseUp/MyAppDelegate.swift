@@ -4,10 +4,10 @@ import BackgroundTasks
 
 class MyAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
-    // formats alarm to 2023-09-29 08:37:00 +0000
-    var alarmTime: Date?
     // alarm in string
     var sharedTime = SharedTime()
+    // formats alarm to 2023-09-29 08:37:00 +0000
+    var alarmTime: Date?
     
     // on application load
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -58,17 +58,17 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDe
         }
     }
     
-// returns true if scheduled correctly
+    // schedule when the background task should be done
     private func scheduleAppRefresh() {
         // Executing app refresh tasks requires setting the fetch UIBackgroundModes capability
         let request = BGAppRefreshTaskRequest(identifier: "com.finessevanes.riseup.backgroundFetch")
         // using nil for no start delay
         request.earliestBeginDate = nil
-        // request.earliestBeginDate = alarmTime
         
         do {
             try BGTaskScheduler.shared.submit(request)
             print("Successfully scheduled app refresh.")
+            print(request)
         } catch {
             print("Could not schedule app refresh: \(error)")
         }
